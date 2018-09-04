@@ -26,7 +26,7 @@ if (answer === 99) {
   alert("Sorry, this is wrong..");
 }
 
-if (score >= 2) {
+if (score === 2 || score > 2) {
   document.write("Very Good "+ userName +" you passed de test!");
 } else {
   document.write("Sorry "+ userName +" try again...");
