@@ -548,21 +548,21 @@ var john = {
     isMarried: false
 };
 
-console.log(john.firstName);
-console.log(john['lastName']);
+console.log(john.firstName, john.lastName);
+console.log(john['firstName'], john['lastName']);
 var x = 'birthYear';
 console.log(john[x]);
 
 john.job = 'designer';
 john['isMarried'] = true;
-console.log(john);
+console.log('john', john);
 
 // new Object syntax
 var jane = new Object();
 jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
-console.log(jane);
+console.log('jane', jane);
 */
 
 
