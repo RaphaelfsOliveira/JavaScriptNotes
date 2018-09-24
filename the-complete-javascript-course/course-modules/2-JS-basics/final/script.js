@@ -571,6 +571,8 @@ console.log('jane', jane);
 * Objects and methods
 */
 /*
+var year = 2018;
+
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -579,12 +581,22 @@ var john = {
     job: 'teacher',
     isMarried: false,
     calcAge: function() {
-        this.age = 2018 - this.birthYear;
+      return year - this.birthYear;
+    },
+    calcFullName: function() {
+      return this.firstName +' '+ this.lastName;
+    },
+    married: function() {
+      this.isMarried = true;
     }
 };
 
-john.calcAge();
 console.log(john);
+
+console.log(john.calcAge());
+console.log(john.calcFullName());
+john.married();
+console.log(john.isMarried);
 */
 
 
