@@ -692,9 +692,9 @@ if (john.calcBMI() > mark.calcBMI()) {
 * Loops and iteration
 */
 
-/*
+
 // for loop
-for (var i = 1; i <= 20; i += 2) {
+for (var i = 1; i <= 20; i += 1) {
     console.log(i);
 }
 
@@ -722,20 +722,26 @@ while(i < john.length) {
 var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 
 for (var i = 0; i < john.length; i++) {
-    if (typeof john[i] !== 'string') continue;
-    console.log(john[i]);
+    if (typeof john[i] !== 'string') {
+      console.log('continue', typeof john[i], john[i]);
+      continue;
+    }
+    console.log('dont continue', john[i]);
 }
 
 for (var i = 0; i < john.length; i++) {
-    if (typeof john[i] !== 'string') break;
-    console.log(john[i]);
+    if (typeof john[i] !== 'string') {
+      console.log('break', typeof john[i], john[i]);
+      break;
+    }
+    console.log('dont break', john[i]);
 }
 
 // Looping backwards
 for (var i = john.length - 1; i >= 0; i--) {
     console.log(john[i]);
 }
-*/
+
 
 
 
