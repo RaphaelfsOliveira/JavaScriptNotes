@@ -723,18 +723,18 @@ var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 
 for (var i = 0; i < john.length; i++) {
     if (typeof john[i] !== 'string') {
-      console.log('continue', typeof john[i], john[i]);
+      console.log('continue: ', typeof john[i], john[i]);
       continue;
     }
-    console.log('dont continue', john[i]);
+    console.log('dont continue: ', john[i]);
 }
 
 for (var i = 0; i < john.length; i++) {
     if (typeof john[i] !== 'string') {
-      console.log('break', typeof john[i], john[i]);
+      console.log('break: ', typeof john[i], john[i]);
       break;
     }
-    console.log('dont break', john[i]);
+    console.log('dont break: ', john[i]);
 }
 
 // Looping backwards
