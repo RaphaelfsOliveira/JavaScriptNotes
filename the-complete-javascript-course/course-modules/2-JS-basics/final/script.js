@@ -846,35 +846,6 @@ var accounts = {
   },
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 var john = {
     fullName: 'John Smith',
