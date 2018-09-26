@@ -4,6 +4,7 @@
 /*
 // functions
 calculateAge(1965);
+console.log('before function');
 
 function calculateAge(year) {
     console.log(2016 - year);
@@ -13,6 +14,8 @@ function calculateAge(year) {
 var retirement = function(year) {
     console.log(65 - (2016 - year));
 }
+// retirement(1956); // only works after declaration because
+// this is a variable
 
 
 // variables
@@ -41,33 +44,38 @@ first();
 
 function first() {
     var b = 'Hi!';
+    console.log('fist1');
     second();
 
     function second() {
         var c = 'Hey!';
+        console.log('second1');
         console.log(a + b + c);
     }
 }
-
-
+*/
 // Example to show the differece between execution stack and scope chain
-var a = 'Hello!';
+/*
+var d = 'Hello!';
 first();
 
 function first() {
-    var b = 'Hi!';
+    var e = 'Hi!';
+    console.log('fist2');
     second();
 
     function second() {
-        var c = 'Hey!';
+        var f = 'Hey!';
+        console.log('second2');
         third()
     }
 }
 
 function third() {
-    var d = 'John';
-    //console.log(c);
-    console.log(a+d);
+    var g = 'John';
+    // console.log(f);
+    console.log('third2');
+    console.log(d + g);
 }
 */
 
@@ -92,9 +100,9 @@ var john = {
     calculateAge: function() {
         console.log(this);
         console.log(2016 - this.yearOfBirth);
-        
+
         function innerFunction() {
-            console.log(this);
+            console.log('innerFunction', this);
         }
         innerFunction();
     }
