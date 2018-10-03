@@ -28,9 +28,9 @@ var mike = new Person('mike', 1995, 'driver');
 var jane = new Person('jane', 1969, 'designer');
 var mark = new Person('mark', 1948, 'programmer');
 
-// mike.calculateAge();
-// jane.calculateAge();
-// mark.calculateAge();
+mike.calculateAge();
+jane.calculateAge();
+mark.calculateAge();
 mark.hello();
 mike.hello();
 jane.hello();
