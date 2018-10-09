@@ -104,6 +104,119 @@ console.log(obj);
 */
 
 
+// Lecture: Passing Functions as arguments
+/*
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(array, fn) {
+  var arrRes = [];
+
+  for (var i = 0; i < array.length; i++) {
+    arrRes.push(fn(array[i]));
+  }
+  return arrRes;
+}
+
+function calculateAge(ele){
+  return 2018 - ele;
+}
+
+function isFullAge(ele) {
+  return ele >= 18;
+}
+
+function maxHeartRate(ele) {
+  if (ele >= 18 && ele <= 81) {
+    return Math.round(206.9 - (0.67 * ele));
+  } else {
+    return -1;
+  }
+}
+
+var ages = arrayCalc(years, calculateAge);
+var fullAges = arrayCalc(ages, isFullAge);
+var rates = arrayCalc(ages, maxHeartRate);
+
+console.log(ages);
+console.log(fullAges);
+console.log(rates);
+*/
+
+
+// Lecture: Functions returning Functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
