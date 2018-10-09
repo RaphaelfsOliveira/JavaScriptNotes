@@ -189,51 +189,46 @@ interviewQuestion('teacher')('Jack');
 
 */
 
+/////////////////////////////////////////////////////////////////////////
+// Lecture: Closures \o/
 
+function retirement(retirementAge) {
+  var a = ' years left until retirement.';
+  return function(yearOfBirth) {
+    var age = 2016 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
 
+var retirementUS = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
 
+retirementGermany(1990);
+retirementUS(1990);
+retirementIceland(1990);
+// retirement(66)(1990);
 
+function interviewQuestion(job) {
+  if (job === 'teacher') {
+    var a = ', What subject do you teach ?';
+  } else if (job === 'programmer') {
+    var a = ', What languages do you know ?';
+  } else {
+    var a = 'what do you do ?';
+  }
+  return function(name) {
+    console.log(name + a);
+  }
+}
 
+var teacherQuestion = interviewQuestion('teacher');
+var programmerQuestion = interviewQuestion('programmer');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+teacherQuestion('John');
+programmerQuestion('Jack');
+programmerQuestion('Jane');
+interviewQuestion('teacher')('Teo');
 
 
 
