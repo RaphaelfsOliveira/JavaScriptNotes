@@ -191,7 +191,7 @@ interviewQuestion('teacher')('Jack');
 
 /////////////////////////////////////////////////////////////////////////
 // Lecture: Closures \o/
-
+/*
 function retirement(retirementAge) {
   var a = ' years left until retirement.';
   return function(yearOfBirth) {
@@ -229,7 +229,49 @@ teacherQuestion('John');
 programmerQuestion('Jack');
 programmerQuestion('Jane');
 interviewQuestion('teacher')('Teo');
+*/
 
+
+///////////////////////////////////////////////////////////////////////
+// Lecture: Bind, Call and Apply
+
+var john = {
+  name: 'John',
+  age: 26,
+  job: 'teacher',
+  presentation: function (style, timeOfDay) {
+    if (style === 'formal') {
+      console.log('Good '+ timeOfDay +', Ladies and gentleman! I\'m '+
+      this.name +', I\'m a '+ this.job +' and I\'m '+ this.age +' years old.');
+    } else if (style === 'friendly') {
+      console.log('Hey! What\'s up? I\'m '+ this.name +', I\'m a '+ this.job +
+      ' and I\'m '+ this.age +' years old. Have a nice '+ timeOfDay +'.');
+    }
+  }
+};
+
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer'
+};
+
+john.presentation('formal', 'morning');
+
+// usa o metodo de um objeto passando o novo objeto this como primeiro argumento
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// recebe array como argumentos
+john.presentation.apply(emily, ['friendly', 'afternoon']);
+
+// carreta uma função com arumentos ou não para chamar depois pode
+// pré carregar os agumentos
+var johnFriendly = john.presentation.bind(john, 'friendly');
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily,'formal');
+emilyFormal('afternoon');
 
 
 
