@@ -234,7 +234,7 @@ interviewQuestion('teacher')('Teo');
 
 ///////////////////////////////////////////////////////////////////////
 // Lecture: Bind, Call and Apply
-
+/*
 var john = {
   name: 'John',
   age: 26,
@@ -272,23 +272,50 @@ johnFriendly('night');
 
 var emilyFormal = john.presentation.bind(emily,'formal');
 emilyFormal('afternoon');
+*/
 
+//////////////////////////////////////////////////////
+// CODING CHALLENGE
 
+var Question = function(quest, answers, correctAnswer) {
+  this.quest = quest;
+  this.answers = answers; // array of answers
+  this.correctAnswer = correctAnswer; // number
+  this.makeQuest = function() {
+    console.log(this.quest);
+    for (var i = 0; i < this.answers.length; i++) {
+      console.log(i + ': ' + this.answers[i]);
+    }
+  }
+  this.correctQuest = function(number) {
+    if (number === this.correctAnswer) {
+      console.log('This is Correct!!');
+    } else {
+      console.log('Wrong answer..');
+    }
+  }
+};
 
+var Questions = new Array();
 
+var quest1 = new Question('Whats is the better car?',
+                          ['Mustang', 'Maverick', 'Camaro'],
+                          0);
 
+var quest2 = new Question('Whats the color of sky?',
+                          ['Green', 'Yellow', 'Blue'],
+                          2);
 
+Questions.push(quest1);
+Questions.push(quest2);
 
+(function () {
+  var arrayNum = Math.floor(Math.random() * Questions.length);
+  var quest = Questions[arrayNum];
 
-
-
-
-
-
-
-
-
-
+  quest.makeQuest();
+  quest.correctQuest(parseInt(prompt()));
+})();
 
 
 
