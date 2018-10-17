@@ -294,6 +294,11 @@ var Question = function(quest, answers, correctAnswer) {
       console.log('Wrong answer..');
     }
   }
+  this.isCorrect = function(number) {
+    if (number === this.correctAnswer) {
+      return true;
+    }
+  }
 };
 
 var Questions = new Array();
@@ -309,13 +314,26 @@ var quest2 = new Question('Whats the color of sky?',
 Questions.push(quest1);
 Questions.push(quest2);
 
-(function () {
-  var arrayNum = Math.floor(Math.random() * Questions.length);
-  var quest = Questions[arrayNum];
+var userScore = 0;
 
-  quest.makeQuest();
-  quest.correctQuest(parseInt(prompt()));
+(function () {
+  var resp = NaN;
+  while (resp != 'exit') {
+    var arrayNum = Math.floor(Math.random() * Questions.length);
+    var quest = Questions[arrayNum];
+
+    quest.makeQuest();
+    resp = prompt();
+    quest.correctQuest(parseInt(resp));
+
+    if (quest.isCorrect(parseInt(resp))) {
+      userScore += 1;
+    }
+    console.log('User score is '+ userScore);
+    console.log('-----------------------------');
+  }
 })();
+
 
 
 
