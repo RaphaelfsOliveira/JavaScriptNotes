@@ -10,7 +10,28 @@ var budgetController = (function() {
 // UI CONTROLLER
 var UIController = (function() {
 
-  // and code here
+  var DOMStrings = {
+    inputType: '.add__type',
+    inputDescription: '.add__description',
+    inputValue: '.add__value',
+    inputBtn: '.add__btn'
+  }
+
+  return {
+
+    getInput: function() {
+      return {
+        type: document.querySelector(DOMStrings.inputType).value, // will be either inc or exp
+        description: document.querySelector(DOMStrings.inputDescription).value,
+        value: document.querySelector(DOMStrings.inputValue).value
+      };
+    },
+
+    getDOMStrings: function() {
+      return DOMStrings;
+    },
+
+  };
 
 })();
 
@@ -23,6 +44,7 @@ var controller = (function(budgetCtrl, UICtrl) {
   var ctrlAddItem = function() {
 
     // 1. Get the filed input data
+    var input = UICtrl.getInput();
 
     // 2. Add the item to the budget CONTROLLER
 
@@ -32,18 +54,28 @@ var controller = (function(budgetCtrl, UICtrl) {
 
     // 5. Display the budget on the UI
 
-    console.log('call ctrlAddItem()');
-
   }
 
-  document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+  var setupEventListeners = function() {
+    var DOMStrings = UICtrl.getDOMStrings();
 
-  document.addEventListener('keypress', function(e) {
-    if (e.keyCode === 13 || e.which === 13) {
-      console.log('ENTER was pressed!');
-      ctrlAddItem();
+    document.querySelector(DOMStrings.inputBtn).addEventListener('click', ctrlAddItem);
+
+    document.addEventListener('keypress', function(e) {
+      if (e.keyCode === 13 || e.which === 13) {
+        ctrlAddItem();
+      }
+    });
+  }
+
+  return {
+    init: function() {
+      console.log('Application has started');
+      setupEventListeners();
     }
-
-  });
+  };
 
 })(budgetController, UIController);
+
+
+controller.init();
