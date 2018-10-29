@@ -42,8 +42,12 @@ var budgetController = (function() {
       data.allItems[type].push(newItem);
       data.ID[type]++;
       return newItem;
+    },
+
+    testing: function() {
+      console.log(data);
     }
-  }
+  };
 
 })();
 
