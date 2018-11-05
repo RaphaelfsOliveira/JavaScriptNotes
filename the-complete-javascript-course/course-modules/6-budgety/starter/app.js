@@ -265,15 +265,17 @@ var UIController = (function() {
     },
 
     displayDate: function() {
-      var now, year, month, day;
+      var now, year, month, months, day;
 
       now = new Date();
+
+      months = [];
 
       year = now.getFullYear();
       month = now.getMonth() + 1;
       day = now.getDate();
-      fullDate = day +'/'+ month +'/'+ year;
 
+      fullDate = day +' '+ month +' '+ year;
       document.querySelector(DOMStrings.dateLabel).textContent = fullDate;
     },
 
