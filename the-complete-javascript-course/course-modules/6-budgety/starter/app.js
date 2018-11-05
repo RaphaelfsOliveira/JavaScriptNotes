@@ -269,13 +269,14 @@ var UIController = (function() {
 
       now = new Date();
 
-      months = [];
+      months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
 
       year = now.getFullYear();
-      month = now.getMonth() + 1;
+      month = now.getMonth();
       day = now.getDate();
 
-      fullDate = day +' '+ month +' '+ year;
+      fullDate = months[month] +' '+ day +', '+ year;
       document.querySelector(DOMStrings.dateLabel).textContent = fullDate;
     },
 
