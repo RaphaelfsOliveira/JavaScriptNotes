@@ -289,11 +289,11 @@ var UIController = (function() {
         DOMStrings.inputValue
       );
 
-      document.querySelector(DOMStrings.inputBtn).classList.toggle('red-btn');
-
       nodeListForEach(fields, function(curr, i) {
         curr.classList.toggle('red-focus');
       });
+
+      document.querySelector(DOMStrings.inputBtn).classList.toggle('red');      
     },
 
   };
