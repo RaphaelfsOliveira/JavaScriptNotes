@@ -153,7 +153,7 @@ var UIController = (function() {
     incomeLabel: '.budget__income--value',
     expensesLabel: '.budget__expenses--value',
     percentageLabel: '.budget__expenses--percentage',
-    container: '.container',
+    container: '.container-app',
     expensesPercLabel: '.item__percentage',
     dateLabel: '.budget__title__date'
   };
@@ -293,7 +293,7 @@ var UIController = (function() {
         curr.classList.toggle('red-focus');
       });
 
-      document.querySelector(DOMStrings.inputBtn).classList.toggle('red');      
+      document.querySelector(DOMStrings.inputBtn).classList.toggle('red');
     },
 
   };
