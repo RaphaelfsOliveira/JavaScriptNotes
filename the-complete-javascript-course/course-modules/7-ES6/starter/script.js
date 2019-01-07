@@ -60,7 +60,7 @@ driversLicence6(true);
 ///////////////////////////////////////////////
 // Lecture: Strings
 // novos recursos Strings
-
+/*
 let firstName = 'john';
 let lastName = 'Smith';
 const yearOfBirth = 1990;
@@ -92,6 +92,32 @@ console.log(
   n.includes('oo'),
   `${firstName} `.repeat(5)
 );
+*/
+
+//////////////////////////////////
+// Lecture: Arrow functions
+
+const years = [1990, 1965, 1982, 1937];
+
+// ES5
+var age5 = years.map(function(e) {
+  return 2019 - e;
+});
+console.log(`ES5: ${age5}`);
+
+// ES6
+let age6 = years.map(e => 2019 - e);
+console.log(`ES6: ${age6}`);
+
+age6 = years.map((e, i) => `Age Element ${i + 1}: ${2019 - e}`);
+console.log(age6);
+
+age6 = years.map((e, i) => {
+  const now = new Date().getFullYear();
+  const age = now - e;
+  return `Age Element ${i + 1}: ${age}`;
+});
+console.log(age6);
 
 
 
@@ -106,9 +132,4 @@ console.log(
 
 
 
-
-
-
-
-
-// /
+// end of the world
