@@ -43,3 +43,72 @@ driversLicence6(true);
 
 ///////////////////////////////////////////
 // Lecture: Blocks and IIFEs
+
+/*
+// IIFE ES5
+(function() {
+  var c = 3;
+})();
+
+// IIFE ES6
+{
+  const a = 1;
+  let b = 2;
+}
+*/
+
+///////////////////////////////////////////////
+// Lecture: Strings
+// novos recursos Strings
+
+let firstName = 'john';
+let lastName = 'Smith';
+const yearOfBirth = 1990;
+
+function calcAge(year) {
+  return 2019 - year;
+}
+
+// ES5
+console.log('This is ' + firstName + ' ' + lastName +
+'. He was born in ' + yearOfBirth + '. Today, he is '
++ calcAge(yearOfBirth)+ ' years old.');
+
+// ES6
+// nova função do ES6 backticks sistema de templates para
+// usar variaveis dentro de strings
+console.log(`This is ${firstName} ${lastName}
+. He was born in ${yearOfBirth}. Today, he is
+${calcAge(yearOfBirth)} years old.`);
+
+// funções para verificar se a string começa ou termina com
+// esses caracteres, includes para ver se a string inclui
+// esses caracteres
+const n = `${firstName} ${lastName}`;
+console.log(
+  n.startsWith('j'),
+  n.endsWith('ith'),
+  n.includes(' '),
+  n.includes('oo'),
+  `${firstName} `.repeat(5)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /
