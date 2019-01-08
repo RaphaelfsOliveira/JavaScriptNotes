@@ -306,6 +306,85 @@ Array.from(all).forEach(e => e.style.color = 'purple');
 */
 
 
+/////////////////////////////////////////////////////
+// Lecture: Rest parameters
+
+// ES5
+// const now = new Date().getFullYear();
+/*
+function isFullAge5() {
+  console.log(arguments);
+  var arrgsArray = Array.prototype.slice.call(arguments);
+
+  arrgsArray.forEach(function(e) {
+    console.log((now - e) >= 18);
+  });
+}
+
+isFullAge5(2009, 1999, 1965);
+isFullAge5(2009, 1999, 1965, 2016, 2008);
+
+
+// ES6
+function isFullAge6(...years) {
+  console.log(years);
+  years.forEach(e => console.log((now - e) >= 18));
+}
+
+isFullAge6(2009, 1999, 1965, 2016, 2008);
+
+const now = new Date().getFullYear();
+
+function isFullAge5(limit) {
+  console.log(arguments);
+  var arrgsArray = Array.prototype.slice.call(arguments, 1);
+
+  arrgsArray.forEach(function(e) {
+    console.log((now - e) >= limit);
+  });
+}
+
+// isFullAge5(16, 2009, 1999, 1965);
+// isFullAge5(2009, 1999, 1965, 2016, 2008);
+
+// ES6
+function isFullAge6(limit, ...years) {
+  // console.log(years);
+  years.forEach(e => console.log((now - e) >= limit));
+}
+
+isFullAge6(16, 2009, 1999, 1965, 2016, 2008);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
