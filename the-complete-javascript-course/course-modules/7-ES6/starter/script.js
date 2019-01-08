@@ -214,7 +214,7 @@ console.log(age2, retirement);
 
 /////////////////////////////////////////////////////
 // Lecture: Arrays
-
+/*
 const boxes = document.querySelectorAll('.box');
 
 // ES5
@@ -263,9 +263,10 @@ console.log(ages[full.indexOf(true)]);
 // arrays ficou muito mais facil do que no ES5
 console.log(ages.findIndex(e => e >= 18));
 console.log(ages.find(e => e >= 18));
+*/
 
-
-
+/////////////////////////////////////////////////////
+// Lecture: Spread operator
 
 
 
