@@ -212,6 +212,79 @@ console.log(age2, retirement);
 */
 
 
+/////////////////////////////////////////////////////
+// Lecture: Arrays
+
+const boxes = document.querySelectorAll('.box');
+
+// ES5
+var boxesArr5 = Array.prototype.slice.call(boxes);
+
+boxesArr5.forEach(function(e) {
+  e.style.backgroundColor = 'red';
+});
+
+// ES6
+const boxesArr6 = Array.from(boxes);
+
+boxesArr6.forEach(e => e.style.backgroundColor = 'dodgerblue');
+
+// ES5
+for(var i = 0; i < boxesArr5.length; i++) {
+  if(boxesArr5[i].className === 'box blue') {
+    continue;
+  }
+  boxesArr5[i].textContent = "I'm changed to blue!";
+}
+
+// ES6
+for(const e of boxesArr6) {
+  if(e.className.includes('box blue')) {
+    continue;
+  }
+  e.textContent = "I'm changed to ES6";
+}
+
+
+// ES5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(e) {
+  return e >= 18;
+});
+console.log(full);
+
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)]);
+
+
+// ES6
+// novas funções de array para retornar index ou elementos de
+// arrays ficou muito mais facil do que no ES5
+console.log(ages.findIndex(e => e >= 18));
+console.log(ages.find(e => e >= 18));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
