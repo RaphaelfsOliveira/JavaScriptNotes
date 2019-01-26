@@ -474,12 +474,62 @@ Person6.greeting();
 /////////////////////////////////////////////////////
 // Lecture: Classes with Subclasses
 
+// ES5
+var Person5 = function(name, yearOfBirth, job) {
+  this.name = name;
+  this.yearOfBirth = yearOfBirth;
+  this.job = job;
+}
 
+Person5.prototype.calculateAge = function() {
+  return new Date().getFullYear() - this.yearOfBirth;
+}
 
+var Athlete5 = function(name, yearOfBirth, job, olympicGames, medals) {
+  Person5.call(this, name, yearOfBirth, job);
+  this.olympicGames = olympicGames;
+  this.medals = medals;
+}
 
+Athlete5.prototype = Object.create(Person5.prototype);
 
+Athlete5.prototype.wonMedal = function() {
+  return this.medals++;
+}
 
+var john5 = new Athlete5('Alex', 1990, 'Runner', 3, 10);
 
+// ES6
+class Person6 {
+  constructor(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+  }
+
+  calculateAge() {
+    return new Date().getFullYear() - this.yearOfBirth;
+  }
+
+  static greeting() {
+    return `This is Default of class Person6`;
+  }
+}
+
+class Athlete6 extends Person6 {
+  constructor(name, yearOfBirth, job, olympicGames, medals) {
+    super(name, yearOfBirth, job);
+    this.olympicGames = olympicGames;
+    this.medals = medals;
+  }
+
+  wonMedal() {
+    this.medals++;
+    return `WooooWW Won the medal!!`;
+  }
+}
+
+const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 5);
 
 
 
