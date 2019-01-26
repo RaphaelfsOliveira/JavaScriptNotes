@@ -428,6 +428,87 @@ console.log(resp);
 
 /////////////////////////////////////////////////////
 // Lecture: Classes
+/*
+// ES5
+var Person5 = function(name, yearOfBirth, job) {
+  this.name = name;
+  this.yearOfBirth = yearOfBirth;
+  this.job = job;
+}
+
+Person5.prototype.calculateAge = function() {
+  var age = new Date().getFullYear() - this.yearOfBirth;
+  return age;
+}
+
+var john5 = new Person5('John', 1986, 'developer');
+console.log('This is '+ john5.name +' he has '+ john5.calculateAge() +' years');
+john5.car = 'Mustang';
+
+// ES6
+class Person6 {
+  constructor(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job
+  }
+
+  calculateAge() {
+    let age = new Date().getFullYear() - this.yearOfBirth;
+    return age;
+  }
+
+  static greeting() {
+    console.log('Hey there!');
+  }
+}
+
+const john6 = new Person6('John', 1990, 'teacher');
+console.log(`This is ${john6.name} he is ${john6.job} and he has ${john6.calculateAge()} years`);
+john6.moto = 'Harley Davidson';
+
+Person6.greeting();
+*/
+
+
+/////////////////////////////////////////////////////
+// Lecture: Classes with Subclasses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
