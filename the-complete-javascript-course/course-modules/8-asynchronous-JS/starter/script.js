@@ -33,30 +33,55 @@
 //
 // first();
 
-const getRecipe = () => {
-  setTimeout(() => {
-    const recipeID = [543, 795, 213, 198];
-    console.log(recipeID);
+///////////////////////////////////////////////////////////
+// The Old Way: Asynchronous JavaScript with Callbacks
 
-    setTimeout((id) => {
-      const recipe = {
-        title: 'Fresh Tomato pasta',
-        publisher: 'Jonas'
-      };
-      console.log(`${id}: ${recipe.title}`);
 
-      setTimeout(publisher => {
-        const recipe2 = {
-          title: 'Italian Pizza',
-          publisher: 'Jonas'
-        };
-        console.log(recipe2);
-      }, 1500, recipe.publisher)
 
-    }, 1000, recipeID[2]);
-  }, 1500);
-}
-getRecipe();
+// const getRecipe = () => {
+//   setTimeout(() => {
+//     const recipeID = [543, 795, 213, 198];
+//     console.log(recipeID);
+//
+//     setTimeout((id) => {
+//       const recipe = {
+//         title: 'Fresh Tomato pasta',
+//         publisher: 'Jonas'
+//       };
+//       console.log(`${id}: ${recipe.title}`);
+//
+//       setTimeout(publisher => {
+//         const recipe2 = {
+//           title: 'Italian Pizza',
+//           publisher: 'Jonas'
+//         };
+//         console.log(recipe2);
+//       }, 1500, recipe.publisher)
+//
+//     }, 1000, recipeID[2]);
+//   }, 1500);
+// }
+// getRecipe();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
