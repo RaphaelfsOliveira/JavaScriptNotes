@@ -65,36 +65,36 @@
 /////////////////////////////////////////////////////////////////////
 // From Callback Hell to Promises
 //
-// const getIDs = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve([543, 795, 213, 198]);
-//   }, 2000);
-// });
-//
-// const getRecipe = recID => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(ID => {
-//       const recipe = {
-//         title: 'Fresh Tomato pasta',
-//         publisher: 'Jonas'
-//       };
-//       resolve(`${ID}: ${recipe.title}`);
-//     }, 1500, recID);
-//   });
-// };
-//
-// const getRelated = publisher => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(pub => {
-//       const recipe = {
-//         title: 'Italian Pizza',
-//         publisher: 'Jonas'
-//       };
-//       resolve(`${pub}: ${recipe.title}`);
-//     }, 1500, publisher)
-//   });
-// };
-//
+const getIDs = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve([543, 795, 213, 198]);
+  }, 2000);
+});
+
+const getRecipe = recID => {
+  return new Promise((resolve, reject) => {
+    setTimeout(ID => {
+      const recipe = {
+        title: 'Fresh Tomato pasta',
+        publisher: 'Jonas'
+      };
+      resolve(`${ID}: ${recipe.title}`);
+    }, 1500, recID);
+  });
+};
+
+const getRelated = publisher => {
+  return new Promise((resolve, reject) => {
+    setTimeout(pub => {
+      const recipe = {
+        title: 'Italian Pizza',
+        publisher: 'Jonas'
+      };
+      resolve(`${pub}: ${recipe.title}`);
+    }, 1500, publisher)
+  });
+};
+
 // getIDs.then(IDs => {
 //   console.log(IDs);
 //   return getRecipe(IDs[2]);
@@ -114,7 +114,19 @@
 /////////////////////////////////////////////////////////////////////
 // From Promises to Async/Await
 
+async function getRecipesAW() {
+  const IDs = await getIDs;
+  console.log(`getRecipesAW`, IDs);
 
+  const recipe = await getRecipe(IDs[3]);
+  console.log('getRecipesAW', recipe);
+
+  const related = await getRelated('Jonas');
+  console.log('getRecipesAW', related);
+
+  return recipe;
+}
+getRecipesAW().then(result => console.log('test', result));
 
 
 
