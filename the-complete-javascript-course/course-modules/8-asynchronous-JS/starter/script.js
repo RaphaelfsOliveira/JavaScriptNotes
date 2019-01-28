@@ -36,11 +36,6 @@
 ///////////////////////////////////////////////////////////
 // The Old Way: Asynchronous JavaScript with Callbacks
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8b7d9ec53db2fefd2cbde2fcf0a27d90d5103319
 // const getRecipe = () => {
 //   setTimeout(() => {
 //     const recipeID = [543, 795, 213, 198];
