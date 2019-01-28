@@ -533,19 +533,78 @@ const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 5);
 
 
 
+class SmallTown {
+  constructor(name, buildYear) {
+    this.name = name;
+    this.buildYear = buildYear;
+  }
+
+  calculateAge() {
+    return new Date().getFullYear() - this.buildYear;
+  }
+
+  reportTitle() {
+    return `${this.name}`;
+  }
+}
+
+class Park extends SmallTown {
+  constructor(name, buildYear, numOfTrees, parkArea) {
+    super(name, buildYear);
+    this.numOfTrees = numOfTrees;
+    this.parkArea = parkArea;
+  }
+
+  treeDensity() {
+    return (this.numOfTrees / this.parkArea);
+  }
+}
+
+class Street extends SmallTown {
+  constructor(name, buildYear, lengthStreet, sizeClass='normal') {
+    super(name, buildYear);
+    this.lengthStreet = lengthStreet;
+    this.sizeClass = sizeClass;
+  }
+
+  sizeClassification() {
+    return `${this.sizeClass}`;
+  }
+}
+
+const park1 = new Park('Green Park', 1834, 723, 1200);
+const park2 = new Park('National Park', 1854, 1000, 1000);
+const park3 = new Park('Oak Park', 1872, 1002, 963);
 
 
+let report = new Map();
+
+report.set('trees', [park1, park2, park3]);
+
+report.set('avgAge',
+`Our ${report.get('trees').length} parks have an average age of ${report.get('trees').reduce((total, curr) => total + curr.calculateAge(), 0)} years.`);
+
+report.set('treeDensity', report.get('trees').map(e => {
+  return `${e.reportTitle()} has a tree density of ${e.treeDensity()} trees per sqr km.`
+}));
+
+report.set('moreTrees',
+`${report.get('trees').find(e => e.numOfTrees > 999).reportTitle()} has more than 1000 trees`);
+
+let item = 'PARKS';
+console.log(`######### ${item} REPORT #########`);
+
+console.log(report.get('avgAge'));
+
+for (variable of report.get('treeDensity')) {
+  console.log(variable);
+}
+
+console.log(report.get('moreTrees'));
 
 
-
-
-
-
-
-
-
-
-
+item = 'STREETS';
+console.log(`######### ${item} REPORT #########`);
 
 
 
