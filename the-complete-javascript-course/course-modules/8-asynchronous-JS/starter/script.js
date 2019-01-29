@@ -132,51 +132,85 @@ const getRelated = publisher => {
 /////////////////////////////////////////////////////////////////////
 // Making AJAX Calls with Fetch and Promises
 
-const CORS = 'https://crossorigin.me/';
+// const CORS = 'https://crossorigin.me/';
+//
+// fetch(`http://jsonplaceholder.typicode.com/users/`)
+// .then(response => {
+//   console.log(response);
+//   return response.json();
+// })
+// .then(data => {
+//   console.log(data);
+//   data.forEach(e => {
+//     console.log(e.username);
+//   })
+//
+//   getUserData();
+// })
+// .catch(error => {
+//   console.log('Error!!', error);
+// });
+//
+// const getUserData = () => {
+//   let name = prompt('Escolha um nome de usuário');
+//   fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`)
+//   .then(response => {
+//     return response.json()
+//   })
+//   .then(data => {
+//     console.log(data);
+//     const user = data[0]
+//     console.log(`
+//       # Contact #
+//
+//       Name: ${user.name},
+//       Phone: ${user.phone}
+//       Email: ${user.email}
+//       Website: ${user.website}
+//     `);
+//   })
+//   .catch(error => {
+//     console.log('Error!!', error);
+//   });
+// }
 
-fetch(`http://jsonplaceholder.typicode.com/users/`)
-.then(response => {
-  console.log(response);
-  return response.json();
-})
-.then(data => {
-  console.log(data);
-  data.forEach(e => {
+
+/////////////////////////////////////////////////////////////////////
+// Making AJAX Calls with Fetch and Async/Await
+
+async function getUsersAndDataAW() {
+
+  try {
+    const getUserIDs = await fetch(`http://jsonplaceholder.typicode.com/users/`);
+    const dataUserIDs = await getUserIDs.json();
+    console.log(dataUserIDs);
+  } catch (e) {
+    console.log('Error!', e);
+  }
+
+  dataUserIDs.forEach(e => {
     console.log(e.username);
   })
 
-  getUserData();
-})
-.catch(error => {
-  console.log('Error!!', error);
-});
-
-const getUserData = () => {
   let name = prompt('Escolha um nome de usuário');
-  fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`)
-  .then(response => {
-    return response.json()
-  })
-  .then(data => {
-    console.log(data);
-    const user = data[0]
-    console.log(`
-      # Contact #
 
-      Name: ${user.name},
-      Phone: ${user.phone}
-      Email: ${user.email}
-      Website: ${user.website}
-    `);
-  })
-  .catch(error => {
-    console.log('Error!!', error);
-  });
+  try {
+    const getUserData = await fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`);
+    const dataUserData = await getUserData.json()
+    console.log(dataUserData);
+  } catch (e) {
+    console.log('Error!', e);
+  }
+
+  const user = dataUserData[0]
+      console.log(`
+        # Contact #
+        Name: ${user.name},
+        Phone: ${user.phone}
+        Email: ${user.email}
+        Website: ${user.website}`);
 }
-
-
-
-
+getUsersAndDataAW();
 
 
 
