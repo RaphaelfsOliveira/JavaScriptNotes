@@ -129,6 +129,80 @@ const getRelated = publisher => {
 // getRecipesAW().then(result => console.log('test', result));
 
 
+/////////////////////////////////////////////////////////////////////
+// Making AJAX Calls with Fetch and Promises
+
+const CORS = 'https://crossorigin.me/';
+
+fetch(`http://jsonplaceholder.typicode.com/users/`)
+.then(response => {
+  console.log(response);
+  return response.json();
+})
+.then(data => {
+  console.log(data);
+  data.forEach(e => {
+    console.log(e.username);
+  })
+
+  getUserData();
+})
+.catch(error => {
+  console.log('Error!!', error);
+});
+
+const getUserData = () => {
+  let name = prompt('Escolha um nome de usuário');
+  fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`)
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    console.log(data);
+    const user = data[0]
+    console.log(`
+      # Contact #
+
+      Name: ${user.name},
+      Phone: ${user.phone}
+      Email: ${user.email}
+      Website: ${user.website}
+    `);
+  })
+  .catch(error => {
+    console.log('Error!!', error);
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
