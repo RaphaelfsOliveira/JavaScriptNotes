@@ -209,12 +209,22 @@ async function getUsersAndDataAW() {
     Website: ${user.website}`;
 
     alert(userDetails);
+    return user;
 
   } catch (error) {
     console.log('Error!', error);
   }
 }
-getUsersAndDataAW();
+
+const getUserData = getUsersAndDataAW();
+
+// esse log não retorna resultado porque ele
+// esta em runtime e é executado muito antes da promessa voltar
+console.log(getUserData);
+
+getUserData.then(response => {
+  console.log(response);
+})
 
 
 
