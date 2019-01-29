@@ -184,8 +184,8 @@ async function getUsersAndDataAW() {
     const getUserIDs = await fetch(`http://jsonplaceholder.typicode.com/users/`);
     const dataUserIDs = await getUserIDs.json();
     console.log(dataUserIDs);
-  } catch (e) {
-    console.log('Error!', e);
+  } catch (error) {
+    console.log('Error!', error);
   }
 
   dataUserIDs.forEach(e => {
@@ -198,8 +198,8 @@ async function getUsersAndDataAW() {
     const getUserData = await fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`);
     const dataUserData = await getUserData.json()
     console.log(dataUserData);
-  } catch (e) {
-    console.log('Error!', e);
+  } catch (error) {
+    console.log('Error!', error);
   }
 
   const user = dataUserData[0]
