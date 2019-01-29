@@ -114,19 +114,19 @@ const getRelated = publisher => {
 /////////////////////////////////////////////////////////////////////
 // From Promises to Async/Await
 
-async function getRecipesAW() {
-  const IDs = await getIDs;
-  console.log(`getRecipesAW`, IDs);
-
-  const recipe = await getRecipe(IDs[3]);
-  console.log('getRecipesAW', recipe);
-
-  const related = await getRelated('Jonas');
-  console.log('getRecipesAW', related);
-
-  return recipe;
-}
-getRecipesAW().then(result => console.log('test', result));
+// async function getRecipesAW() {
+//   const IDs = await getIDs;
+//   console.log(`getRecipesAW`, IDs);
+//
+//   const recipe = await getRecipe(IDs[3]);
+//   console.log('getRecipesAW', recipe);
+//
+//   const related = await getRelated('Jonas');
+//   console.log('getRecipesAW', related);
+//
+//   return recipe;
+// }
+// getRecipesAW().then(result => console.log('test', result));
 
 
 
