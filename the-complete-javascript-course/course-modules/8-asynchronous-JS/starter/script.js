@@ -184,13 +184,14 @@ async function getUsersAndDataAW() {
     const getUserIDs = await fetch(`http://jsonplaceholder.typicode.com/users/`);
     const dataUserIDs = await getUserIDs.json();
     console.log(dataUserIDs);
+
+    dataUserIDs.forEach(e => {
+      console.log(e.username);
+    });
+
   } catch (error) {
     console.log('Error!', error);
   }
-
-  dataUserIDs.forEach(e => {
-    console.log(e.username);
-  })
 
   let name = prompt('Escolha um nome de usuário');
 
@@ -198,17 +199,20 @@ async function getUsersAndDataAW() {
     const getUserData = await fetch(`https://jsonplaceholder.typicode.com/users/?username=${name}`);
     const dataUserData = await getUserData.json()
     console.log(dataUserData);
+
+    const user = dataUserData[0]
+    const userDetails =`
+    # Contact #
+    Name: ${user.name}
+    Phone: ${user.phone}
+    Email: ${user.email}
+    Website: ${user.website}`;
+
+    alert(userDetails);
+
   } catch (error) {
     console.log('Error!', error);
   }
-
-  const user = dataUserData[0]
-      console.log(`
-        # Contact #
-        Name: ${user.name},
-        Phone: ${user.phone}
-        Email: ${user.email}
-        Website: ${user.website}`);
 }
 getUsersAndDataAW();
 
