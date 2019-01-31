@@ -17,6 +17,7 @@ const limitRecipeTitle = (title, limit=17) => {
       }
       return acc + cur.length;
     }, 0);
+
     return title.join(' ');
   }
   return title;
