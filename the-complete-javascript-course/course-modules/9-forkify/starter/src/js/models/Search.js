@@ -12,9 +12,16 @@ export default class Search {
     try {
       const getRecipes = await axios(`${URL}?key=${APIKEY}&q=${this.query}`);
       this.recipes = getRecipes.data.recipes;
+      if (this.recipes === undefined) {
+        alert(`Erro: acabou o limite de uso da API!`);
+      }
     } catch (error) {
       console.log(`${error}`);
       alert(error);
     }
   }
 }
+
+
+
+const APIKEY = `6823808f2827d8cda1d04cbce035dbf5`;
