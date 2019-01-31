@@ -7,7 +7,8 @@ export default class Search {
   }
 
   async getRecipesResults() {
-    const APIKEY = `60241fc7b6065228e497db8ce46ef95c`;
+    // const APIKEY = `60241fc7b6065228e497db8ce46ef95c`;
+    const APIKEY = `6823808f2827d8cda1d04cbce035dbf5`;
     const URL = `https://www.food2fork.com/api/search`;
     try {
       const getRecipes = await axios(`${URL}?key=${APIKEY}&q=${this.query}`);
@@ -21,7 +22,3 @@ export default class Search {
     }
   }
 }
-
-
-
-const APIKEY = `6823808f2827d8cda1d04cbce035dbf5`;
