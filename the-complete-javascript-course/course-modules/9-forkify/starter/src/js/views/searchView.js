@@ -7,6 +7,24 @@ export const clearIput = () => elements.searchInput.value = '';
 
 export const clearResults = () => elements.searchResultList.innerHTML = '';
 
+const limitRecipeTitle = (title, limit=17) => {
+  if (title.length > limit) {
+    let wordChar = 0;
+
+    title = title.split(' ');
+
+    title.forEach((word, i, array) => {
+      wordChar += word.length + 1;
+
+      if (!(wordChar <= limit)) {
+        array.splice(i, array.length);
+      }
+    });
+    return title.join(' ');
+  }
+  return title;
+}
+
 const renderRecipe = recipe => {
   const markup = `
       <li>
@@ -15,7 +33,7 @@ const renderRecipe = recipe => {
             <img src="${recipe.image_url}" alt="${recipe.title}">
           </figure>
           <div class="results__data">
-            <h4 class="results__name">${recipe.title}</h4>
+            <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
             <p class="results__author">${recipe.publisher}</p>
           </div>
         </a>
@@ -25,5 +43,6 @@ const renderRecipe = recipe => {
 }
 
 export const renderResults = recipes => {
+  console.log(recipes);
   recipes.forEach(renderRecipe);
 }
