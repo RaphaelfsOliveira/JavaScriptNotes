@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// End of imports
 
 export default class Search {
   constructor(query) {

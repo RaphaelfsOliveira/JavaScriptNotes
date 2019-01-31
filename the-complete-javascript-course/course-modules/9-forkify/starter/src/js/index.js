@@ -1,6 +1,7 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements } from './views/base';
+// End of imports
 
 // Global state of the app
 // - Search object
