@@ -9,15 +9,14 @@ export const clearResults = () => elements.searchResultList.innerHTML = '';
 
 const limitRecipeTitle = (title, limit=17) => {
   if (title.length > limit) {
-    let count = 0;
 
-    title = title.split(' ')
-    title.forEach((word, i, array) => {
-      count += word.length + 1;
-      if (!(count <= limit)) {
+    title = title.split(' ');
+    title.reduce((acc, cur, i, array) => {
+      if (acc + cur.length > limit) {
         array.splice(i, array.length);
       }
-    });
+      return acc + cur.length;
+    }, 0);
     return title.join(' ');
   }
   return title;
