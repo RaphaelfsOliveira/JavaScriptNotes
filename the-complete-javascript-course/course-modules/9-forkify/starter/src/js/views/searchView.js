@@ -9,14 +9,12 @@ export const clearResults = () => elements.searchResultList.innerHTML = '';
 
 const limitRecipeTitle = (title, limit=17) => {
   if (title.length > limit) {
-    let wordChar = 0;
+    let count = 0;
 
-    title = title.split(' ');
-
+    title = title.split(' ')
     title.forEach((word, i, array) => {
-      wordChar += word.length + 1;
-
-      if (!(wordChar <= limit)) {
+      count += word.length + 1;
+      if (!(count <= limit)) {
         array.splice(i, array.length);
       }
     });
@@ -43,6 +41,5 @@ const renderRecipe = recipe => {
 }
 
 export const renderResults = recipes => {
-  console.log(recipes);
   recipes.forEach(renderRecipe);
 }
